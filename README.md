@@ -1,5 +1,7 @@
 # qb-demo-challenge
-
-<img src="https://images.ctfassets.net/y6oq7udscnj8/4yIMlBb6GEfK4N3IEByhjv/fe07f08769ec3b2cfeef39e0b30c83ea/Quickbase.png?w=592&h=368&q=50&fm=webp" width="200" height="100"/>
-
-The goal of this project is to address a technical challenge for QB.
+<p align="center">
+    <a href="https://seekvectorlogo.com/quick-base-vector-logo-svg/" target="_blank"><img src="https://seekvectorlogo.com/wp-content/uploads/2022/02/quick-base-vector-logo-2022.png" width="200" height="100"/></a>
+    <p align="center">
+        The goal of this project is to address a technical challenge for QB.
+    </p>
+</p>
