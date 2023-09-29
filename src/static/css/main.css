@@ -83,7 +83,7 @@ h3 {
 }
 
 .tm-font-400 {
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .tm-text-light-gray {
@@ -105,7 +105,6 @@ a.tm-text-white:focus {
 
 .tm-text-green {
     color: #99CC66;
-    font-weight: 600;
 }
 
 .tm-text-cyan {
