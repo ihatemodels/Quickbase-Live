@@ -1,5 +1,0 @@
-{
-    "yaml.schemas": {
-        "https://json.schemastore.org/github-workflow.json": "file:///home/gdarakov/src/qb-demo-challenge/.github/workflows/deploy.yml"
-    }
-}
