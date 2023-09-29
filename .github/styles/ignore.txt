@@ -9,3 +9,5 @@ Gergin
 sublicense
 MERCHANTABILITY
 NONINFRINGEMENT
+Rufflint
+Gitleaks
