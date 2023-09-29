@@ -16,6 +16,7 @@ jobs:
         source_files: README.md LICENSE CONTRIBUTING.md CHANGELOG.md
         task_name: Markdown
         output_file: spellcheck-output.txt
+        config_path: .spellcheck.yml
     - uses: actions/upload-artifact@v3
       with:
         name: Spellcheck Output
