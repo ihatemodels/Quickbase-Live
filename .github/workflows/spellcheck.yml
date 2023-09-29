@@ -1,6 +1,8 @@
 name: Spellcheck
 on:
   push:
+    tags-ignore:
+      - '**'
   pull_request:
     branches:
       - main

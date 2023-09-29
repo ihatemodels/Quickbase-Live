@@ -1,7 +1,11 @@
 name: Gitleaks
-on: [push, pull_request]
+on:
+  push:
+    tags-ignore:
+      - '**'
+  pull_request:
 jobs:
-  scan:
+  gitleaks:
     name: gitleaks
     runs-on: ubuntu-latest
     steps:
