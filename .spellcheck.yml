@@ -1,4 +1,26 @@
-extends: spelling
-message: "Did you really mean '%s'?"
-level: warning
-ignore: ./.github/styles/ignore.txt
+matrix:
+- name: Markdown
+  expect_match: false
+  apsell:
+    mode: en
+  dictionary:
+    wordlists:
+    - .github/styles/ignore.txt
+    output: wordlist.dic
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.markdown:
+      markdown_extensions:
+      - markdown.extensions.extra:
+  - pyspelling.filters.html:
+      comments: false
+      attributes:
+      - alt
+      ignores:
+      - ':matches(code, pre)'
+      - 'code'
+      - 'pre'
+      - 'blockquote'
+  sources:
+  - '*.md'
+  - 'src/**/*.md'
