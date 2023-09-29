@@ -162,3 +162,4 @@ cython_debug/
 run.sh
 .ruff_cache/
 .vscode/
+iac/.terraform/
