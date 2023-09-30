@@ -1,8 +1,8 @@
 # Quickbase Live
 
-[![Spellcheck](https://github.com/ihatemodels/qb-demo-challenge/actions/workflows/spellcheck.yml/badge.svg)](https://github.com/ihatemodels/qb-demo-challenge/actions/workflows/spellcheck.yml)
-[![Rufflint](https://github.com/ihatemodels/qb-demo-challenge/actions/workflows/ruff.yml/badge.svg)](https://github.com/ihatemodels/qb-demo-challenge/actions/workflows/ruff.yml)
-[![Gitleaks](https://github.com/ihatemodels/qb-demo-challenge/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/ihatemodels/qb-demo-challenge/actions/workflows/gitleaks.yml)
+[![Spellcheck](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/spellcheck.yml/badge.svg)](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/spellcheck.yml)
+[![Rufflint](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/ruff.yml/badge.svg)](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/ruff.yml)
+[![Gitleaks](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/gitleaks.yml)
 
 <p align="center">
     <a href="https://quickbase.live" target="_blank"><img src="src/static/img/quickbase-logo-color.png" width="1000" height="130"/></a>
