@@ -5,7 +5,7 @@
 [![Gitleaks](https://github.com/ihatemodels/qb-demo-challenge/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/ihatemodels/qb-demo-challenge/actions/workflows/gitleaks.yml)
 
 <p align="center">
-    <a href="https://seekvectorlogo.com/quick-base-vector-logo-svg/" target="_blank"><img src="src/static/img/quickbase-logo-color.png" width="1200" height="200"/></a>
+    <a href="https://seekvectorlogo.com/quick-base-vector-logo-svg/" target="_blank"><img src="src/static/img/quickbase-logo-color.png" width="1000" height="130"/></a>
 </p>
 
 
