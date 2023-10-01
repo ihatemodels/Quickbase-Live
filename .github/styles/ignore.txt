@@ -46,3 +46,6 @@ standart
 api
 QL
 SpeedCurve
+FastAPI
+CodeQL
+IaC

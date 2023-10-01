@@ -138,7 +138,7 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
 - **How to release a new version of the app**? 
 
-Create a new TAG in the repository.
+    Create a new TAG in the repository.
 
 - **What technologies/tools are used in the project**?
 
@@ -158,7 +158,7 @@ Create a new TAG in the repository.
 
 - **How long it took to complete the project**?
 
-I've spent approximately 20 to 30 hours on this project. I've allocated the majority of my time to the application and CI, with the infrastructure and monitoring receiving less attention. I've also spent a considerable amount of time on the presentation and documentation.
+    I've spent approximately 20 to 30 hours on this project. I've allocated the majority of my time to the application and CI, with the infrastructure and monitoring receiving less attention. I've also spent a considerable amount of time on the presentation and documentation.
 
 - **Did you enjoy the project?**
 
