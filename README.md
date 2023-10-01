@@ -27,13 +27,13 @@ The task offered the option of using a prebuilt Java or Python application. Howe
 
 Explore the application at https://quickbase.live (P.S.: If you hire me, I might consider selling the domain!) 😉
 
-#### API 
+#### API
 
-The api is accesible on https://quickbase.live/swagger. You can navigate to the swagger documentation and test the api from there. 
+The api is accessible on https://quickbase.live/swagger. You can navigate to the swagger documentation and test the api from there. 
 
 The most important endpoint is the `/api/hire-me` endpoint. This endpoint is used to show the most important information about the reviewer of this project.
 
-Test it out yourself 
+Test it out yourself:
 
 ```bash
 curl -X 'GET' \
@@ -71,11 +71,11 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
 - **What type of steps you would perform in order to verify the deployment is successful?**
 
-    The deployment is verified by the Google Cloud Run health/startup checks. If the HTTP call to /api/heathz returns a 200 status code, the deployment is considered successful and the new version takes place. In the opoosite case the deployment is considered failed and the previous version is kept. 
+    The deployment's success on Google Cloud Run is determined by health and startup checks. A successful HTTP call to /api/healthz that returns a status code of 200 indicates a successful deployment, prompting the transition to the new version. Conversely, if this check fails, the deployment is considered unsuccessful, and the system retains the previous version.
 
-    Also we have a automated check in the Release pipeline that checks the endpoint `https://quickbase.live/api/healthz` and if it returns a 200 status code and the "version" json field is the same as the VERSION file the deployment is considered successful in the pipeline.
+    Additionally, our Release pipeline incorporates an automated check targeting the endpoint https://quickbase.live/api/healthz. A status code of 200, coupled with the "version" JSON field matching the VERSION file, confirms a successful deployment within the pipeline.
 
-    This application is pretty simple so this is enough to verify the deployment. In a more complex application we would need to add more checks to verify the deployment. For example we can add a smoke test that checks the application is working as expected. Etc ...
+    Given the simplicity of this application, these measures suffice for deployment verification. However, for more intricate applications, a broader range of checks would be necessary. For instance, introducing smoke tests could further ensure the application's intended functionality post-deployment, among other potential verifications
 
 - **Plan and a task break-down how you would implement monitoring of this deployed app**
 
@@ -98,10 +98,10 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
     The CI process already includes some security scans. We use: 
 
-    - [Gitleaks](https://github.com/gitleaks/gitleaks)
+    - Secrets Scans
 
-        To scan for sercrets left in the repository. This will prevent the pipeline to continue if a secret is found.
-        So the author should fix the githistory and remove the secret from the history. Also the secret should be revoked and a new one should be created.
+        We use [Gitleaks]() To scan for secrets left in the repository. This will prevent the pipeline to continue if a secret is found.
+        So the author should fix the Git history and remove the secret from the repository. Also the secret should be revoked and a new one should be created.
 
     - Secure Coding Guidlines
 
