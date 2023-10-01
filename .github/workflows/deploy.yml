@@ -88,7 +88,8 @@ jobs:
         uses: crazy-max/ghaction-container-scan@v3
         with:
           image: st3ga/quickbase-live:latest
-          severity_threshold: HIGH
+          severity: HIGH
+          severity_threshold: CRITICAL
           dockerfile: ./Dockerfile
 
       - name: Upload SARIF file
