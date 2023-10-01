@@ -115,19 +115,16 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
         We use [Trivy](https://github.com/aquasecurity/trivy) in our pipeline to scan the container for vulnerabilities. The pipeline will fail if the scanner detects a high and above level of security issue in the container asset.
     
+    - Static Code Analysis/Static Program Analysis
+
+        We use Github Code QL to scan the code for security issues. The results of the scans can be found in the [Security Tab](https://github.com/ihatemodels/Quickbase-Live/security/code-scanning) of the repository. As a feature improve we should fail the pipeline if the scanner detects a high and above level of security issue in the code at the current commit.
+
+        
     The following security scans are not implemented but i would recommend to implement them:
 
     - Web Application Firewall
 
         We should use a WAF to protect the application from different kind of attacks that can be prevented with WAF.
-
-    - Static Application Security Testing (SAST)
-
-        We should use a SAST tool to scan the code for vulnerabilities. This will help us to find vulnerabilities in the code before they are deployed. Example of SAST tools are: 
-
-        - [SonarQube](https://www.sonarqube.org/)
-        - [Snyk](https://snyk.io/)
-        - [Veracode](https://www.veracode.com/products/binary-static-analysis-sast)
 
 - **What other improvements would you make to the CI/CD process if you had more time?**
 
