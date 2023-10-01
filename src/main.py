@@ -12,7 +12,10 @@ from responses import HealthzResponse, HireMeResponse
 # Get the start time when the application initializes
 start_time = datetime.now()
 
-SITE_VERSION=
+SITE_VERSION=""
+
+with open("VERSION", "r", encoding='utf-8') as f:
+    SITE_VERSION = f.read().strip()
 
 description= """
 `Why did the developer go to Quickbase Live?`
@@ -40,9 +43,9 @@ app = FastAPI(
     },
 )
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="/app/static"), name="static")
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="/app/templates")
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 async def read_root(request: Request):
