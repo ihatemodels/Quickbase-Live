@@ -19,6 +19,7 @@ The goal of this project is to address a DevOps technical challenge for QB.
 - **[CI](#ci)**
 - **[Monitoring](#monitoring)**
 - **[Presentation Questions](#presentation-questions)**
+- **[FAQ](#faq)**
 - **[Overextending](#overextending)**
 
 ### Application 
@@ -132,6 +133,36 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
     More of the changes that i would make are described in the sections above.
 
+
+### FAQ
+
+- **How to release a new version of the app**? 
+
+Create a new TAG in the repository.
+
+- **What technologies/tools are used in the project**?
+
+    - [Python](https://www.python.org/): The programming language used to develop the application.
+    - [FastAPI](https://fastapi.tiangolo.com/): The web framework used to develop the API.
+    - [Ruff](https://github.com/astral-sh/ruff): The linter used to enforce code quality.
+    - [Spellcheck](): The spellchecker used to enforce spelling and grammar.
+    - [Gitleaks](https://github.com/gitleaks/gitleaks): The security scanner used to detect secrets.
+    - [Trivy](https://trivy.dev/): The security scanner used to detect vulnerabilities in the container assets.
+    - [GitHub CodeQL](https://codeql.github.com/): The static code analysis tool used to detect security issues in the code.
+    - [Docker](https://www.docker.com/): The containerization technology used to package the application.
+    - [Docker Hub](https://hub.docker.com/): The container registry used to store the container assets.
+    - [Terraform](https://www.terraform.io/): The infrastructure-as-code (IaC) tool used to provision the infrastructure.
+    - [GitHub Actions](https://github.com/features/actions): The CI/CD tool used to automate the development and deployment processes.
+    - [Google Cloud Platform](https://cloud.google.com/): The cloud provider used to host the application and infrastructure.
+    - [Cloud Run](https://cloud.google.com/run): The serverless compute platform used to host the application.
+
+- **How long it took to complete the project**?
+
+I've spent approximately 20 to 30 hours on this project. I've allocated the majority of my time to the application and CI, with the infrastructure and monitoring receiving less attention. I've also spent a considerable amount of time on the presentation and documentation.
+
+- **Did you enjoy the project?**
+
+Oh, absolutely!
 
 ### Overextending
 
