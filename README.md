@@ -103,13 +103,13 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
         We use [Gitleaks]() To scan for secrets left in the repository. This will prevent the pipeline to continue if a secret is found.
         So the author should fix the Git history and remove the secret from the repository. Also the secret should be revoked and a new one should be created.
 
-    - Secure Coding Guidlines
+    - Secure Coding Guidelines
 
         While our repository currently features a linter, we haven't configured specific guidelines due to time constraints. Fortunately, the default linter rules already address and mitigate several security concerns.
 
     - Dependency Scanning
 
-        We use the Github dependency scanning to scan for vulnerabilities in the dependencies. It's configured to run on every pull request and it will deny the MR if the scanner detects a high and above level of security issue. The MR will fail also if the scanner detects a license of the dependency that is not allowed by our standart. Allowed Licenses and can be configured in `.github/workflows/dependa.yml`
+        We use the Github dependency scanning to scan for vulnerabilities in the dependencies. It's configured to run on every pull request and it will deny the MR if the scanner detects a high and above level of security issue. The MR will fail also if the scanner detects a license of the dependency that is not allowed by our standard. Allowed Licenses and can be configured in `.github/workflows/dependa.yml`
 
     - Container Scanning
 

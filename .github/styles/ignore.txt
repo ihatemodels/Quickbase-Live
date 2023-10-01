@@ -39,5 +39,8 @@ Snyk
 SonarQube
 Veracode
 githistory
-heathz
+healthz
+JSON
+verifications
+standart
 api
