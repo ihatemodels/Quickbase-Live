@@ -8,4 +8,5 @@ class HealthzResponse(BaseModel):
 class HireMeResponse(BaseModel):
     person: str
     position: str
+    company: str
     reasons: List[str]

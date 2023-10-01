@@ -91,13 +91,13 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
     **Future Enhancements:**
 
-    1. **Logging**: To further enhance observability, integrating a logging solution is paramount. This will offer deeper insights into the application's dynamics. However, due to time restrictions, logging has yet to be integrated into the current setup.
+    - **Logging**: To further enhance observability, integrating a logging solution is paramount. This will offer deeper insights into the application's dynamics. However, due to time restrictions, logging has yet to be integrated into the current setup.
 
-    2. **Tracing**: Implementing tracing, especially distributed tracing, will allow us to meticulously track how the application interacts with other services and infrastructure components, enabling a comprehensive understanding of its performance dynamics.
+    - **Tracing**: Implementing tracing, especially distributed tracing, will allow us to meticulously track how the application interacts with other services and infrastructure components, enabling a comprehensive understanding of its performance dynamics.
 
-    3. **Alerting**: An integral step forward would be to introduce alerting mechanisms to our monitoring solutions. This ensures proactive issue detection by sending out notifications when anomalies arise.
+    - **Alerting**: An integral step forward would be to introduce alerting mechanisms to our monitoring solutions. This ensures proactive issue detection by sending out notifications when anomalies arise.
 
-    4. **External Multi Continental Site Speed Monitoring**: We can use a service like [SpeedCurve](https://speedcurve.com/) to monitor the site speed from different locations around the world. This will allow us to have a better understanding of the site speed from different locations and we can use the data to improve the site speed.
+    - **External Multi Continental Site Speed Monitoring**: We can use a service like [SpeedCurve](https://speedcurve.com/) to monitor the site speed from different locations around the world. This will allow us to have a better understanding of the site speed from different locations and we can use the data to improve the site speed.
 
 - **What kind of security policies and scans would you recommend to put into place?**
 

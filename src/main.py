@@ -89,7 +89,9 @@ async def hire_me():
     return {
         "person": "Gergin Darakov",
         "position": "DevOps Engineer",
+        "company": "Quickbase",
         "reasons": [
+            "I am modest",
             "I am a hard worker",
             "I am a quick learner",
             "I am a team player",
@@ -118,7 +120,11 @@ async def hire_me():
             "I am a good accountant",
             "I am a good bookkeeper",
             "I am a good financial planner",
-            "I have low self esteem",
+            "I am a good investor",
+            "I am a good networker",
+            "I am a good friend",
+            "I am a good person",
+            "I am modest",
         ] 
     }
 

@@ -17,17 +17,16 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-dark rounded">
+    <nav class="navbar navbar-expand-md navbar-light bg-dark rounded ">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Quickbase Live</a>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon icon-white"></span>
+            <i class="bi bi-list ico"></i>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-
             </ul>
 
             <div class="d-flex ms-auto">
@@ -53,7 +52,7 @@
             <div class="col-lg-12">
                 <div class="tm-video-container">
                     <video id="tm-welcome-video" class="tm-welcome-video" autoplay loop muted="">
-                        <source src="static/videos/main.mp4" type="video/mp4"> Your browser does not support the video tag.
+                        <source src="static/videos/main.mp4" type="video/mp4">Your browser does not support the video tag.
                         </video>
                         <div id="tm-video-text-overlay" class="tm-video-text-overlay d-none">
                             <h1>
@@ -74,12 +73,18 @@
             <br>
             <br>
             <hr class="mt-2 mb-3"/>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
 
         <div class="container tm-container-2">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="mb-3 text-center">The skills</h1>
+                    <h1 class="mb-3 text-left">Who am I</h1>
                 </div>
             </div>
             <div class="row tm-section-mb">
@@ -93,43 +98,36 @@
                             <div class="tm-timeline-description-wrap">
                                 <div class="tm-bg-dark tm-timeline-description">
                                     <h3 class="tm-text-green tm-font-400">The pipeline executor</h3>
-                                    <p>My skills are so sharp, even Java thinks I've got class! With me onboard, we'll build pipelines hotter and faster than your morning coffee. </p>
-                                    <p class="tm-text-green float-right mb-0">ChatGPT, 4 October 2023</p>
+                                    <p class="tm-font-400 text-left">My skills are so sharp, even Java thinks I've got class! 
+                                        With me onboard, we'll build pipelines hotter and faster than your morning coffee.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
                         <div class="tm-timeline-connector-vertical"></div>
                     </div>
 
                     <div class="tm-timeline-item">
                         <div class="tm-timeline-item-inner">
-                            <img src="static/img/python.png" alt="Image" class="rounded-circle tm-img-timeline" weight="300" height="200">
-                            <div class="tm-timeline-connector">
-                                <p class="mb-0">&nbsp;</p>
-                            </div>
                             <div class="tm-timeline-description-wrap">
-                                <div class="tm-bg-dark-light tm-timeline-description">
-                                    <h3 class="tm-text-green tm-font-400">The Pythonic Way</h3>
-                                    <p></p>
-                                    <div class="container">
-                                    <pre class="line-numbers">
-                                        <code class="language-python">
-
-def main():
-    # Finding even and odd numbers from 1 to 100. 🤔 
-    # Pro tip: 
-    # => There's likely a Pythonic one-liner for this challenge! 
-    for result in [{True: "Odd", False: "Even"}[i % 2 == 0] for i in range(1, 101)]:
-        print(result)
-
-if __name__ == "__main__":
-    main()
-                                        </code>
-                                    </pre>
+                                <div class="tm-bg-dark-light tm-timeline-description code-container">
+                                    <h3 class="tm-text-green tm-font-400">The Pythonic Way Developer</h3>
+                                    <br>
+                                    <div class="container-fluid ">
+                                        <pre class="line-numbers">
+                                            <code class="language-python">
+                                                
+                                                def main():
+                                                    # Finding even and odd numbers from 1 to 100. 🤔 
+                                                    # Pro tip: 
+                                                    # => There's likely a Pythonic one-liner for this challenge! 
+                                                    for result in [{True: "Odd", False: "Even"}[i % 2 == 0] for i in range(1, 101)]:
+                                                    print(result)
+                                                
+                                                if __name__ == "__main__":
+                                                    main()
+                                            </code>
+                                        </pre>
                                     </div>
-                                    </p>
-                                    <p class="tm-text-green float-right mb-0">Gergin Darakov, 3 October 2023</p>
                                 </div>
                             </div>
                         </div>
@@ -145,12 +143,14 @@ if __name__ == "__main__":
                             <div class="tm-timeline-description-wrap">
                                 <div class="tm-bg-dark tm-timeline-description">
                                     <h3 class="tm-text-cyan tm-font-400">The Kubernetes Ninja</h3>
-                                    <p>
+                                    <p class="tm-font-400">
                                         When it comes to Kubernetes, I don't just 'kubectl apply', 
                                         I ninja-flip into clusters! Some folks use a compass to navigate; I just helm my way through.
                                     </p>
-                                    <p class="tm-text-cyan float-right mb-0">Unkown,  30 June 2067</p>
                                 </div>
+                            </div>
+                            <div class="tm-timeline-connector">
+                                <p class="mb-0">&nbsp;</p>
                             </div>
                         </div>
                         <div class="tm-timeline-connector-vertical"></div>
@@ -158,47 +158,60 @@ if __name__ == "__main__":
 
                     <div class="tm-timeline-item">
                         <div class="tm-timeline-item-inner">
-                            <img src="static/img/quickbase.png" alt="Image" class="rounded-circle tm-img-timeline">
+                            <img src="static/img/react.png" alt="Image" class="rounded-circle tm-img-timeline">
                             <div class="tm-timeline-connector">
                                 <p class="mb-0">&nbsp;</p>
                             </div>
                             <div class="tm-timeline-description-wrap">
-                                <div class="tm-bg-dark-light tm-timeline-description">
+                                <div class="tm-bg-dark tm-timeline-description">
                                     <h3 class="tm-text-orange tm-font-400">The Frontend Artist</h3>
-                                    <p>As you can alredy assume. I can center div tags all day long</p>
+                                    <p class="tm-font-400">As you can alredy assume. I can center div tags all day long</p>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
             </div>
             <!--  row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="mb-3 text-left">About the project</h1>
+                </div>
+            </div>
             <hr>
             <div class="row tm-section-mb tm-section-mt">
                 <div class="col-lg-4 col-md-4 col-sm-12 pr-lg-5 mb-md-0 mb-4">
-                    <h3 class="mt-2 mb-3 tm-text-gray">Nunc dictum consequat</h3>
-                    <p>Integer imperdiet aliquet lobortis. In in metus risus. Pellentesque pulvinar venenatis dui id rutrum. In
-                    pharetra neque et eleifend venenatis.</p>
+                    <h3 class="mt-2 mb-3 tm-text-gray tm-font-400">Commitment</h3>
+                    <p class="tm-font-400"> 
+                        Commitment is more than just dedication to a task. It's the relentless pursuit of excellence, even when faced with obstacles. 
+                        It's the determination to push boundaries, to innovate, to iterate, and reiterate until what’s good becomes great, and what’s great becomes exceptional.
+                    </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 pr-lg-5 mb-md-0 mb-4">
-                    <h3 class="mt-2 mb-3 tm-text-gray">Morbi ultrices tellus</h3>
-                    <p>Integer imperdiet aliquet lobortis. In in metus risus. Pellentesque pulvinar venenatis dui id rutrum. In
-                    pharetra neque et eleifend venenatis.</p>
+                    <h3 class="mt-2 mb-3 tm-text-gray tm-font-400">Dedication</h3>
+                    <p class="tm-font-400"> 
+                        Every digital landscape tells a story. Here, in this crafted corner of the web, 
+                        lies a testament to passion, persistence, and a unique vision. 
+                        This isn't just a portfolio — it's a chronicle of dedication.
+                    </p>
                 </div>
+
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <h3 class="mt-2 mb-3 tm-text-gray">Suspendisse dolor tortor</h3>
-                    <p>Integer imperdiet aliquet lobortis. In in metus risus. Pellentesque pulvinar venenatis dui id rutrum. In
-                    pharetra neque et eleifend venenatis.</p>
+                    <h3 class="mt-2 mb-3 tm-text-gray tm-font-400">Passion</h3>
+                    <p class="tm-font-400"> 
+                        This portfolio is not just a showcase of technical expertise, but a narrative of a 
+                        journey fueled by a burning passion for technology. It's about recognizing the 
+                        magic in every byte, the art in every algorithm, and the dream in every digital endeavor.
+                    </p>
                 </div>
             </div>
             <hr>
 
         <footer class="row mt-5 mb-5">
             <div class="col-lg-12">
-                <p class="text-center tm-text-gray tm-copyright-text mb-0">Copyright &copy;
-                    <span class="tm-current-year">2023</span> Gergin Darakov
+                <p class="text-center tm-text-gray tm-copyright-text mb-0 tm-font-400">Copyright &copy;
+                    <span class="tm-current-year">2023</span> Made with by Gergin Darakov
                     
                     | DevOps Engineer at Quickbase | Quickbase Live Version: {{ site_version }}
                 </p>
