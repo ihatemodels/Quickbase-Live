@@ -18,8 +18,8 @@ The goal of this project is to address a DevOps technical challenge for QB.
 - **[Infrastructure](#infrastructure)**
 - **[CI](#ci)**
 - **[Monitoring](#monitoring)**
-- **[Overextending](#overextending)**
 - **[Presentation Questions](#presentation-questions)**
+- **[Overextending](#overextending)**
 
 ### Application 
 
@@ -38,7 +38,7 @@ Test it out yourself
 ```bash
 curl -X 'GET' \
   'https://quickbase.live/api/hire-me' \
-  -H 'accept: application/json'
+  -H 'accept: application/json' | jq
 ```
 
 ### Infrastructure
@@ -66,10 +66,6 @@ The metrics are aggregated by a Prometheus server that I've configured within my
 Apart from that i would consider adding a logging solution to the application. This would allow for better visibility into the application's behavior. But this is not present in the current setup due to time constraints.
 
 For the underlying infrastructure we use the Google Cloud Platform [Built-in metrics for Cloud Run](https://cloud.google.com/run/docs/monitoring)
-
-### Overextending
-
-I've gone above and beyond with this project. While I was fully aware of the initial requirements, I felt compelled to elevate the project to a standard I'd deem presentation-ready. To be candid, this approach aligns with how I'd handle a real-world scenario, especially for a Python application intended for public visibility on GitHub and hosting on GCP.
 
 ### Presentation Questions
 
@@ -109,12 +105,39 @@ I've gone above and beyond with this project. While I was fully aware of the ini
 
     - Secure Coding Guidlines
 
-        We should follow a secure coding standart and use a linter to enforce it. The repository already has a linter in place, but cuz of time constraints no specific guidlines is configured. We use the default linter rules which already prevent some security issues.
+        While our repository currently features a linter, we haven't configured specific guidelines due to time constraints. Fortunately, the default linter rules already address and mitigate several security concerns.
 
     - Dependency Scanning
 
-        We use the Github dependency scanning to scan for vulnerabilities in the dependencies. It's configured to run on every push and pull request.
+        We use the Github dependency scanning to scan for vulnerabilities in the dependencies. It's configured to run on every pull request and it will deny the MR if the scanner detects a high and above level of security issue. The MR will fail also if the scanner detects a license of the dependency that is not allowed by our standart. Allowed Licenses and can be configured in `.github/workflows/dependa.yml`
+
+    - Container Scanning
+
+        We use [Trivy](https://github.com/aquasecurity/trivy) in our pipeline to scan the container for vulnerabilities. The pipeline will fail if the scanner detects a high and above level of security issue in the container asset.
+    
+    The following security scans are not implemented but i would recommend to implement them:
 
     - Web Application Firewall
 
-        We should use a WAF to protect the application from attacks.
+        We should use a WAF to protect the application from different kind of attacks that can be prevented with WAF.
+
+    - Static Application Security Testing (SAST)
+
+        We should use a SAST tool to scan the code for vulnerabilities. This will help us to find vulnerabilities in the code before they are deployed. Example of SAST tools are: 
+
+        - [SonarQube](https://www.sonarqube.org/)
+        - [Snyk](https://snyk.io/)
+        - [Veracode](https://www.veracode.com/products/binary-static-analysis-sast)
+
+- **What other improvements would you make to the CI/CD process if you had more time?**
+
+    I will consider using the Github Release feature and integrate the pipeline with it. This will allow us to have a better control over the releases and we can use the release notes to describe the changes in the release. Also we can use the release feature to trigger the deployment to GCP.
+
+    I will add a unit and smoke tests to the application. This will allow us to have a better confidence in the application and we can use the tests to verify the application is working as expected.
+
+    More of the changes that i would make are described in the sections above.
+
+
+### Overextending
+
+I've gone above and beyond with this project. While I was fully aware of the initial requirements, I felt compelled to elevate the project to a standard I'd deem presentation-ready. To be candid, this approach aligns with how I'd handle a real-world scenario, especially for a Python application intended for public visibility on GitHub and hosting on GCP.
