@@ -14,16 +14,32 @@ The goal of this project is to address a DevOps technical challenge for QB.
 ## Table of Contents
 
 - **[Application](#application)**
+    - **[API](#api)**
 - **[Infrastructure](#infrastructure)**
 - **[CI](#ci)**
 - **[Monitoring](#monitoring)**
 - **[Overextending](#overextending)**
+- **[Presentation Questions](#presentation-questions)**
 
 ### Application 
 
 The task offered the option of using a prebuilt Java or Python application. However, to uniquely showcase my skills, I took the initiative to develop a static site application alongside an API using Python. Through this web-based project, I've attempt to present an engaging argument for why I'd be a valuable addition to your team.
 
 Explore the application at https://quickbase.live (P.S.: If you hire me, I might consider selling the domain!) 😉
+
+#### API 
+
+The api is accesible on https://quickbase.live/swagger. You can navigate to the swagger documentation and test the api from there. 
+
+The most important endpoint is the `/api/hire-me` endpoint. This endpoint is used to show the most important information about the reviewer of this project.
+
+Test it out yourself 
+
+```bash
+curl -X 'GET' \
+  'https://quickbase.live/api/hire-me' \
+  -H 'accept: application/json'
+```
 
 ### Infrastructure
 
@@ -54,3 +70,51 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 ### Overextending
 
 I've gone above and beyond with this project. While I was fully aware of the initial requirements, I felt compelled to elevate the project to a standard I'd deem presentation-ready. To be candid, this approach aligns with how I'd handle a real-world scenario, especially for a Python application intended for public visibility on GitHub and hosting on GCP.
+
+### Presentation Questions
+
+- **What type of steps you would perform in order to verify the deployment is successful?**
+
+    The deployment is verified by the Google Cloud Run health/startup checks. If the HTTP call to /api/heathz returns a 200 status code, the deployment is considered successful and the new version takes place. In the opoosite case the deployment is considered failed and the previous version is kept. 
+
+    Also we have a automated check in the Release pipeline that checks the endpoint `https://quickbase.live/api/healthz` and if it returns a 200 status code and the "version" json field is the same as the VERSION file the deployment is considered successful in the pipeline.
+
+    This application is pretty simple so this is enough to verify the deployment. In a more complex application we would need to add more checks to verify the deployment. For example we can add a smoke test that checks the application is working as expected. Etc ...
+
+- **Plan and a task break-down how you would implement monitoring of this deployed app**
+
+    The monitoring for the application is already implemented. We have the following monitoring tools in place:
+
+    - [Built-in metrics for Cloud Run](https://cloud.google.com/run/docs/monitoring)
+    - [Prometheus metrics](https://quickbase.live/metrics/)
+    - [Grafana dashboard](https://grafana.com/grafana/dashboards/14526)
+
+    **Future Enhancements:**
+
+    1. **Logging**: To further enhance observability, integrating a logging solution is paramount. This will offer deeper insights into the application's dynamics. However, due to time restrictions, logging has yet to be integrated into the current setup.
+
+    2. **Tracing**: Implementing tracing, especially distributed tracing, will allow us to meticulously track how the application interacts with other services and infrastructure components, enabling a comprehensive understanding of its performance dynamics.
+
+    3. **Alerting**: An integral step forward would be to introduce alerting mechanisms to our monitoring solutions. This ensures proactive issue detection by sending out notifications when anomalies arise.
+
+
+- **What kind of security policies and scans would you recommend to put into place?**
+
+    The CI process already includes some security scans. We use: 
+
+    - [Gitleaks](https://github.com/gitleaks/gitleaks)
+
+        To scan for sercrets left in the repository. This will prevent the pipeline to continue if a secret is found.
+        So the author should fix the githistory and remove the secret from the history. Also the secret should be revoked and a new one should be created.
+
+    - Secure Coding Guidlines
+
+        We should follow a secure coding standart and use a linter to enforce it. The repository already has a linter in place, but cuz of time constraints no specific guidlines is configured. We use the default linter rules which already prevent some security issues.
+
+    - Dependency Scanning
+
+        We use the Github dependency scanning to scan for vulnerabilities in the dependencies. It's configured to run on every push and pull request.
+
+    - Web Application Firewall
+
+        We should use a WAF to protect the application from attacks.

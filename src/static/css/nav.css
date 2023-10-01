@@ -1,0 +1,22 @@
+.navbar-brand {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: whitesmoke
+}
+
+.navbar-brand:hover {
+    color: #f8c555
+}
+
+.navbar {
+    border-radius: 60px;
+}
+
+.ico {
+    font-size: 1.3em;
+    color: whitesmoke
+}
+
+.ico:hover {
+    color: #f8c555
+}

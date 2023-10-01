@@ -1,4 +1,3 @@
-// https://codepen.io/AmruthPillai/pen/axvqB
 (function ($) {
     $.fn.extend({
         rotaterator: function (options) {

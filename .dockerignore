@@ -1,0 +1,9 @@
+README.md
+.github/
+.ruff_cache/
+.vscode/
+.gitignore
+.gitleaks.toml
+.spellcheck.yml
+LICENSE
+iac/

@@ -101,4 +101,4 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: 'Update the service image'
-      run: 'gcloud run services update quickbase --region europe-north1 --image st3ga/quickbase-live:${{ github.ref_name }}'
+      run: 'gcloud run services update quickbase --region ${{ secrets.GCP_REGION }} --image st3ga/quickbase-live:${{ github.ref_name }}'
