@@ -5,7 +5,7 @@
 [![Gitleaks](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/gitleaks.yml)
 
 <p align="center">
-    <a href="https://quickbase.live" target="_blank"><img src="src/static/img/quickbase-logo-color.png" width="1000" height="130"/></a>
+    <a href="https://quickbase.live" target="_blank"><img src="assets/img/quickbase-logo-color.png" width="1000" height="130"/></a>
 </p>
 
 
@@ -56,6 +56,10 @@ I choose to use Cloud Run because it offers a fully managed serverless environme
 The Continuous Integration (CI) process is powered by GitHub Actions and the workflow configurations can be found in the `.github/workflows/` directory. While the primary task was to establish a deployment step targeting GCP, I went a step further. I've set up a comprehensive CI pipeline that offers linting, spellchecking, security scanning and more with each push and pull request to the repository. Deployment to GCP is triggered exclusively when a new tag is created from the main branch, and only after all checks have been successfully passed.
 
 For container artifact storage, I utilize my organization's container registry on Docker Hub. You can browse the container assets from this repository at https://hub.docker.com/orgs/st3ga/repositories. As an added layer of security, I leverage Docker Hub's built-in security scanning to scrutinize the images for potential vulnerabilities. A status badge indicating the security status of the images is placed at the top of this README for quick reference.
+
+This is how the Release pipeline can be explained visually:
+
+![Release Pipeline](assets/img/release.png)
 
 ### Monitoring
 
@@ -119,13 +123,6 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
     - Static Code Analysis/Static Program Analysis
 
         We use Github Code QL to scan the code for security issues. The results of the scans can be found in the [Security Tab](https://github.com/ihatemodels/Quickbase-Live/security/code-scanning) of the repository. As a feature improve we should fail the pipeline if the scanner detects a high and above level of security issue in the code at the current commit.
-
-        
-    The following security scans are not implemented but i would recommend to implement them:
-
-    - Web Application Firewall
-
-        We should use a WAF to protect the application from different kind of attacks that can be prevented with WAF.
 
 - **What other improvements would you make to the CI/CD process if you had more time?**
 

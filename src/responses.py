@@ -6,4 +6,6 @@ class HealthzResponse(BaseModel):
     uptime: str
 
 class HireMeResponse(BaseModel):
+    person: str
+    position: str
     reasons: List[str]

@@ -16,7 +16,7 @@ resource "google_cloud_run_v2_service" "qb-demo" {
       max_instance_count = 2
     }
     containers {
-      image = "st3ga/quickbase-demo:v1.3.0"
+      image = "st3ga/quickbase-live:v1.3.0"
       startup_probe {
         initial_delay_seconds = 3
         timeout_seconds       = 1
@@ -28,7 +28,7 @@ resource "google_cloud_run_v2_service" "qb-demo" {
       }
       liveness_probe {
         http_get {
-          path = "/healthz"
+          path = "/api/healthz"
         }
       }
       ports {

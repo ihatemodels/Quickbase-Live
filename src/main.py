@@ -87,6 +87,8 @@ async def hire_me():
     ```
     """
     return {
+        "person": "Gergin Darakov",
+        "position": "DevOps Engineer",
         "reasons": [
             "I am a hard worker",
             "I am a quick learner",
@@ -100,6 +102,22 @@ async def hire_me():
             "I am a good speaker",
             "I am a good programmer",
             "I am a good tester",
+            "I am a good debugger",
+            "I am a good planner",
+            "I am a good organizer",
+            "I am a good researcher",
+            "I am a good designer",
+            "I am a good manager",
+            "I am a good analyst",
+            "I am a good architect",
+            "I am a good strategist",
+            "I am a good marketer",
+            "I am a good salesperson",
+            "I am a good negotiator",
+            "I am a good decision maker",
+            "I am a good accountant",
+            "I am a good bookkeeper",
+            "I am a good financial planner",
             "I have low self esteem",
         ] 
     }
