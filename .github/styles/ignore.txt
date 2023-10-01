@@ -44,3 +44,5 @@ JSON
 verifications
 standart
 api
+QL
+SpeedCurve

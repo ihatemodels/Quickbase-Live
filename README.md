@@ -93,6 +93,7 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
     3. **Alerting**: An integral step forward would be to introduce alerting mechanisms to our monitoring solutions. This ensures proactive issue detection by sending out notifications when anomalies arise.
 
+    4. **External Multi Continental Site Speed Monitoring**: We can use a service like [SpeedCurve](https://speedcurve.com/) to monitor the site speed from different locations around the world. This will allow us to have a better understanding of the site speed from different locations and we can use the data to improve the site speed.
 
 - **What kind of security policies and scans would you recommend to put into place?**
 
