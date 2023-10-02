@@ -3,6 +3,7 @@
 [![Spellcheck](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/spellcheck.yml/badge.svg)](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/spellcheck.yml)
 [![Rufflint](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/ruff.yml/badge.svg)](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/ruff.yml)
 [![Gitleaks](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/ihatemodels/Quickbase-Live/actions/workflows/gitleaks.yml)
+![GitHub](https://img.shields.io/github/license/ihatemodels/Quickbase-Live)
 
 <p align="center">
     <a href="https://quickbase.live" target="_blank"><img src="assets/img/quickbase-logo-color.png" width="1000" height="130"/></a>
@@ -50,14 +51,13 @@ The infrastructure for this project is constructed using Terraform, with the rel
 - [Custom Domain Mapping](https://cloud.google.com/run/docs/mapping-custom-domains): To map the domain name to the Cloud Run service.
 - [Cloud Monitoring](https://cloud.google.com/run/docs/monitoring): To monitor the Cloud Run service.
 
-I choose to use Cloud Run because it offers a fully managed serverless environment for running containers. This allows me to focus on the application itself, rather than the underlying infrastructure. Additionally, Cloud Run is a cost-effective solution that scales automatically to meet demand. Cloud Run also offers a automatic SSL certificate management through [Let's Encrypt](https://letsencrypt.org/). This is a great feature that allows us to use HTTPS with custom domain without having to worry about certificate management.
+I choose to use Cloud Run because it offers a fully managed serverless environment for running containers.Additionally, Cloud Run is a cost-effective solution that scales automatically to meet demand. Cloud Run also offers a automatic SSL certificate management through [Let's Encrypt](https://letsencrypt.org/). This is a great feature that allows us to use HTTPS with custom domain without having to worry about certificates management.
 
 ### CI 
 
 The Continuous Integration (CI) process is powered by GitHub Actions and the workflow configurations can be found in the `.github/workflows/` directory. While the primary task was to establish a deployment step targeting GCP, I went a step further. I've set up a comprehensive CI pipeline that offers linting, spellchecking, security scanning and more with each push and pull request to the repository. Deployment to GCP is triggered exclusively when a new tag is created from the main branch, and only after all checks have been successfully passed.
 
-For container artifact storage, I utilize my organization's container registry on Docker Hub. You can browse the container assets from this repository at https://hub.docker.com/orgs/st3ga/repositories. As an added layer of security, I leverage Docker Hub's built-in security scanning to scrutinize the images for potential vulnerabilities. A status badge indicating the security status of the images is placed at the top of this README for quick reference.
-
+For container artifact storage, I utilize my organization's container registry on Docker Hub. You can browse the container assets from this repository at https://hub.docker.com/orgs/st3ga/repositories. As an added layer of security, I leverage Docker Hub's built-in security scanning to scrutinize the images for potential vulnerabilities.
 This is how the Release pipeline can be explained visually:
 
 ![Release Pipeline](assets/img/release.png)
@@ -88,7 +88,7 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
     - [Built-in metrics for Cloud Run](https://cloud.google.com/run/docs/monitoring)
     - [Prometheus metrics](https://quickbase.live/metrics/)
-    - [Grafana dashboard](https://grafana.com/grafana/dashboards/14526)
+    - Grafana dashboard
 
     **Future Enhancements:**
 
