@@ -20,6 +20,96 @@ h3 {
     font-size: 1.3rem;
 }
 
+.center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+}
+
+.planet-moon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.planet-image, .planet-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;  /* This ensures the planet and its mask are above the moon */
+}
+
+
+.planet-mask {
+    background: url('static/img/planet.png') no-repeat center center; 
+    background-size: cover;
+    z-index: 3;  /* This ensures the mask is above the planet but below the moon */
+}
+
+.planet-container {
+    position: relative;
+    width: 20vw; 
+    height: 20vw;  /* This will take up half the viewport width */
+    margin: 0 auto;
+}
+
+.planet-image {
+    width: 20vw; 
+    height: 20vw;  /* This will take up half the viewport width */
+    overflow: hidden; /* Ensures any parts of the image outside the circle are hidden */
+}
+
+.moon-image {
+    position: absolute;
+    top: 32%;
+    left: 40%;
+    border-radius: 50%; /* This rounds the image */
+    overflow: hidden; /* Ensures any parts of the image outside the circle are hidden */
+    width: 3vw; 
+    height: 3vw;  /* This will take up half the viewport width */
+    animation: rotateMoon 20s infinite linear;
+    box-shadow: 0px 0px 20px 10px rgba(220, 220, 220, 0.5); /* Grayish smoke shadow */
+    filter: blur(1px); /* Slight blur to enhance the smoky feel */
+}
+
+@keyframes rotateMoon {
+    0% {
+        transform: rotate(0deg) translateX(240px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(240px) rotate(-360deg);
+    }
+}
+
+/* Adjusted distance for tablets or similar-sized devices */
+@media (max-width: 768px) {
+    @keyframes rotateMoon {
+        0% {
+            transform: rotate(0deg) translateX(180px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(180px) rotate(-360deg);
+        }
+    }
+}
+
+/* Adjusted distance for mobile devices */
+@media (max-width: 480px) {
+    @keyframes rotateMoon {
+        0% {
+            transform: rotate(0deg) translateX(120px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(120px) rotate(-360deg);
+        }
+    }
+}
+
+.inline-code {
+    white-space: pre; /* Preserves newlines and whitespace */
+}
+
 .tm-site-logo {
     width: 40px;
     height: 40px;
@@ -250,6 +340,21 @@ textarea,
 
 p {
     line-height: 1.9;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.blinking-cursor::after {
+    content: '|';  /* This is your cursor */
+    font-weight: bold;
+    animation: blink 1s step-end infinite;
 }
 
 @media (min-width: 1200px) {
