@@ -64,7 +64,7 @@ This is how the Release pipeline can be explained visually:
 
 ### Monitoring
 
-The application exposes Prometheus metrics, which are accessible at https://quickbase.live/metrics/. It's important to note that, under typical circumstances, exposing Prometheus metrics publicly is not recommended due to security considerations. However, for the purposes of this demonstration, I've made an exception.
+The application exposes Prometheus metrics, which are accessible at https://quickbase.live/api/metrics/. It's important to note that, under typical circumstances, exposing Prometheus metrics publicly is not recommended due to security considerations. However, for the purposes of this demonstration, I've made an exception.
 
 The metrics are aggregated by a Prometheus server that I've configured within my own infrastructure to optimize costs and avoid additional expenses on GCP. To complement this, I've also developed a Grafana dashboard to visualize these metrics. Although the dashboard is part of my private setup, I am more than happy to provide a demonstration during the presentation.
 
@@ -88,7 +88,8 @@ For the underlying infrastructure we use the Google Cloud Platform [Built-in met
 
     - [Built-in metrics for Cloud Run](https://cloud.google.com/run/docs/monitoring)
     - [Prometheus metrics](https://quickbase.live/metrics/)
-    - Grafana dashboard
+    - [Application Logs](https://console.cloud.google.com/logs/query;query=resource.type%20%3D%20%22cloud_run_revision%22%0Aresource.labels.service_name%20%3D%20%22quickbase%22%0Aresource.labels.location%20%3D%20%22europe-north1%22%0A-jsonPayload.url%3D%22http:%2F%2F127.0.0.1%2Fapi%2Fhealthz%22%0A-severity%3DINFO;summaryFields=jsonPayload%252Fmessage,jsonPayload%252Fstatus_code,jsonPayload%252Fcomponent,jsonPayload%252Fmethod,jsonPayload%252Furl:false:32:beginning;cursorTimestamp=2023-10-06T11:35:08.625566Z?authuser=1&project=quickbase-demo-400520)
+    - [Grafana dashboard](https://grafana.local.st3ga.com/d/ef81c73d-7c25-455e-8405-5cc7642f78f8/quickbase-live?orgId=1)
 
     **Future Enhancements:**
 
