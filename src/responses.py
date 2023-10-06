@@ -1,5 +1,7 @@
 from typing import List
+
 from pydantic import BaseModel
+
 
 class HealthzResponse(BaseModel):
     status: str
@@ -10,3 +12,7 @@ class HireMeResponse(BaseModel):
     position: str
     company: str
     reasons: List[str]
+
+class FailResponse(BaseModel):
+    details: str
+    component: str
